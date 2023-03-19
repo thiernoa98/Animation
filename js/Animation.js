@@ -23,7 +23,6 @@ let intvl;
 let speed = 10;
 
 function animateElement() { 
-    //this flips the booloean, this mean isPlay is not equals isPlay
     isPlay = !isPlay; 
 
     if (isPlay) {
@@ -32,10 +31,8 @@ function animateElement() {
         car.style.left = leftPos + 'px';
         leftPos +=speed;
     
-        //check if the postion is greteer
+        //check if the postion is greter
         if (leftPos > window.innerWidth - 300) {
-            //300 is the width(css) of the car
-            // clearInterval(intvl) //this stop the setInterval();
 
             //turn the car around
             car.style.transform = 'scaleX(-1)';
@@ -45,7 +42,7 @@ function animateElement() {
         if (leftPos == 0) {
             //stop the car and turn around again
             car.style.transform = 'scaleX(1)';
-            speed *= -1 //this multiply 10 by -1 == -10
+            speed *= -1 
         }
 
     }, 40); //end of setInterval();
@@ -55,7 +52,7 @@ function animateElement() {
     }
 }
 
-//making the scpace bar stop the car
+//making the space bar stop the car
 btn.addEventListener('keydown', evalSpaceBar);
 
 function evalSpaceBar(e) {  
